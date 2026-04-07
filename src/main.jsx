@@ -13,12 +13,12 @@ const router = createBrowserRouter([
     path: "/",
     element: <MainLayout></MainLayout>,
     children: [
-      { index: true, Component: Homepage },
+      { index: true, Component: Homepage, loader: () => fetch("/data.json") },
       { path: "/app", Component: AllApps },
-      {path:"/install",Component:Install}
+      { path: "/install", Component: Install },
     ],
-    errorElement: <NotFound></NotFound>
-  }
+    errorElement: <NotFound></NotFound>,
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(
