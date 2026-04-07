@@ -4,16 +4,21 @@ import "./index.css";
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import MainLayout from "./Layout/MainLayout";
+import AllApps from "./pages/AllApps";
+import Homepage from "./pages/Homepage";
+import Install from "./pages/Install";
+import NotFound from "./pages/NotFound";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
     children: [
-      { index: true, element: <h2>Homeapge</h2> },
-      { path: "/app", element: <h2>All apps</h2> },
+      { index: true, Component: Homepage },
+      { path: "/app", Component: AllApps },
+      {path:"/install",Component:Install}
     ],
-    errorElement: <h2>This page is not Found</h2>,
-  },
+    errorElement: <NotFound></NotFound>
+  }
 ]);
 
 createRoot(document.getElementById("root")).render(
