@@ -1,10 +1,23 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import App from "./App.jsx";
+import { createBrowserRouter } from "react-router";
+import { RouterProvider } from "react-router/dom";
+import MainLayout from "./Layout/MainLayout";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainLayout></MainLayout>,
+    children: [
+      { index: true, element: <h2>Homeapge</h2> },
+      { path: "/app", element: <h2>All apps</h2> },
+    ],
+    errorElement: <h2>This page is not Found</h2>,
+  },
+]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <h2 className="text-2xl text-red-300">hello</h2>
+    <RouterProvider router={router} />,
   </StrictMode>,
 );
