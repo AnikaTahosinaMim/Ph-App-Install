@@ -10,7 +10,7 @@ import UseApps from "../../hooks/UseApps";
 const Trending = () => {
   //   const apps = use(appspromissed);
   //   console.log(apps);
-  const { apps, loading } = UseApps;
+  const { apps, loading } = UseApps();
 
   //   console.log(apps, "jjjjgtrshrjo");
   //   console.log(loading, "jdsf");

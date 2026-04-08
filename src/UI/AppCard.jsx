@@ -1,13 +1,18 @@
 import React from "react";
 import { CiStar } from "react-icons/ci";
 import { FaDownLong } from "react-icons/fa6";
+import { Link } from "react-router";
 
 const AppCard = ({ app }) => {
   return (
     <div>
-      <div className="card bg-base-100  shadow-sm">
+      <Link to={`/app/${app.id}`} className="card bg-base-100  shadow-sm">
         <figure>
-          <img src={app.image}   className="rounded-md h-[200px] w-auto" alt="Shoes" />
+          <img
+            src={app.image}
+            className="rounded-md h-[200px] w-auto"
+            alt="Shoes"
+          />
         </figure>
         <div className="card-body">
           <h2 className="card-title">{app.title}</h2>
@@ -23,7 +28,7 @@ const AppCard = ({ app }) => {
             </span>
           </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };
