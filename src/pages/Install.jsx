@@ -16,30 +16,34 @@ const Install = () => {
     <div>
       <h2>your Install Apps</h2>
       <div>
-        {installApps.map((apps) => {
-          return (
-            <div className="container mx-auto">
-              <div className="flex justify-between items-center gap-5 border border-gray-200 shadow-md my-6 p-4 ">
-                <div>
-                  <img
-                    src={apps.image}
-                    className="w-[100px] h-[100px]"
-                    alt=""
-                  />
-                  <h2>{apps.title}</h2>
-                </div>
-                <div>
-                  <button
-                    onClick={() => handleUnistall(apps)}
-                    className="btn btn-secondary text-white"
-                  >
-                    Unstall
-                  </button>
+        {installApps.length === 0 ? (
+          <h2>No data found</h2>
+        ) : (
+          installApps.map((apps) => {
+            return (
+              <div className="container mx-auto">
+                <div className="flex justify-between items-center gap-5 border border-gray-200 shadow-md my-6 p-4 ">
+                  <div>
+                    <img
+                      src={apps.image}
+                      className="w-[100px] h-[100px]"
+                      alt=""
+                    />
+                    <h2>{apps.title}</h2>
+                  </div>
+                  <div>
+                    <button
+                      onClick={() => handleUnistall(apps)}
+                      className="btn btn-secondary text-white"
+                    >
+                      Unstall
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })
+        )}
       </div>
     </div>
   );

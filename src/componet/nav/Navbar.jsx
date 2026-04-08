@@ -24,6 +24,9 @@ const Navbar = () => {
             <li>
               <CommonNav to={"/install"}>Instulation</CommonNav>
             </li>
+            <li>
+              <CommonNav to={"/dashboad"}>DashBoad</CommonNav>
+            </li>
           </ul>
           <button className="btn bg-purple-600 text-white">
             <FaGithub></FaGithub> Contribute

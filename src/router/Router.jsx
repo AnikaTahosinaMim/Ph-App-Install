@@ -7,6 +7,7 @@ import NotFound from "../pages/NotFound";
 import MainLayout from "../Layout/MainLayout";
 import Appdetails from "../pages/Appdetails";
 import { FcCallback } from "react-icons/fc";
+import Dashboad from "../pages/Dashboad";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
       { path: "/app", Component: AllApps },
       { path: "/install", Component: Install },
       { path: "/app/:id", Component: Appdetails },
+      {path : "/dashboad", Component:Dashboad}
     ],
 
     errorElement: <NotFound></NotFound>,
