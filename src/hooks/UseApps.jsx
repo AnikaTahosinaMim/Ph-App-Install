@@ -11,10 +11,10 @@ const UseApps = () => {
           setApps(data);
           setLoading(false);
         };
-        fetchData();
+      fetchData();
       }, []);
-      console.log(apps, "jjjjgtrshrjo");
-      console.log(loading, "jdsf");
+      // console.log(apps, "jjjjgtrshrjo");
+      // console.log(loading, "jdsf");
 
 
   return {apps,loading};

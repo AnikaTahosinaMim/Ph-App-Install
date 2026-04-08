@@ -1,20 +1,27 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { useParams } from "react-router";
 import UseApps from "../hooks/UseApps";
 import { CiStar } from "react-icons/ci";
 import { FaDownLong, FaStar } from "react-icons/fa6";
 import { AiFillLike } from "react-icons/ai";
+import { InstallAppsContext } from "../contaxtApi/InstallContaxt";
 
 const Appdetails = () => {
+  const { installApps, setInstallApps } = useContext(InstallAppsContext);
+
   const { id } = useParams();
-  console.log(id, "id");
+  // console.log(id, "id");
   const { apps, loading } = UseApps();
-  console.log(apps, loading, "app", "loadinf");
+  // console.log(apps, loading, "app", "loadinf");
   const expectedData = apps.find((app) => app.id == id);
-  console.log(expectedData, "expectdaa");
+  // console.log(expectedData, "expectdaa");
   if (!expectedData) {
     return <p>App not found</p>;
   }
+  const handleApp = () => {
+    setInstallApps([...installApps, expectedData]);
+    // console.log(installApps, setInstallApps, "install app");
+  };
 
   return (
     <div className="border border-gray-300 shadow-lg p-8 container mx-auto">
@@ -53,7 +60,11 @@ const Appdetails = () => {
         </div>
       </div>
       <div>
-        <button className="btn bg-purple-500">Install Now</button>
+        
+          <button onClick={() => handleApp()} className="btn bg-purple-500">
+            Install Now
+          </button>
+       
       </div>
     </div>
   );

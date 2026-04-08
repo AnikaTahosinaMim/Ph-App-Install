@@ -1,11 +1,12 @@
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 
 export const InstallAppsContext = createContext();
 
 const InstallAppsProvider = ({ children }) => {
+  const [installApps, setInstallApps] = useState([]);
   const data = {
-    name: "uthso",
-    height: "34",
+  installApps,
+  setInstallApps,
   };
 
   return (
